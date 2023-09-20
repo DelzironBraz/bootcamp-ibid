@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\specific-test-bootcamp.props" />
+</Project>

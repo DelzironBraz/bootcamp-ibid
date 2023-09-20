@@ -1,0 +1,38 @@
+﻿@page
+@model specific_test_bootcamp.Pages.Clients.IndexModel
+@{
+}
+
+<br />
+<h2>List of Clients</h2>
+<a class="btn btn-primary btn-sm" href="/Clients/Create">Cadastrar Novo</a>
+<table class="table">
+    <thread>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Criado em</th>
+            <th>Opções</th>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach(var client in Model.listClients)
+        {
+            <tr>
+                <td>@client.id</td>
+                <td>@client.name</td>
+                <td>@client.email</td>
+                <td>@client.phone</td>
+                <td>@client.address</td>
+                <td>@client.created_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Clients/Update?id=@client.id">Atualizar</a>
+                    <a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@client.id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

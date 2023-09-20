@@ -1,0 +1,58 @@
+﻿@page
+@model specific_test_bootcamp.Pages.Clients.createModel
+@{
+}
+
+<br />
+<h2>Cadastrar Cliente</h2>
+
+@if(Model.error.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.error</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Fechar"></button>
+    </div>
+}
+
+@if (Model.success.Length > 0)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@Model.success</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Fechar"></button>
+    </div>
+}
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Nome</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.clientInfo.name" placeholder="Nome completo"/>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">E-mail</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.clientInfo.email" placeholder="email@exemplo.com" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Telefone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.clientInfo.phone" placeholder="(00) 0 0000-0000" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Endereço</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="address" value="@Model.clientInfo.address" placeholder="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/">Cancelar</a>
+        </div>
+    </div>
+</form>
